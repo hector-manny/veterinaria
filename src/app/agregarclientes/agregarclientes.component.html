@@ -1,0 +1,53 @@
+<div class="header">
+    <h1>Bienvenido a veterinaria UDB</h1>
+</div>
+<div class="cliente">
+    <h2>Datos del cliente</h2>
+    <p>Por favor ingrese los datos del cliente</p>
+</div>
+<label>Nombre:</label>
+<input type="text" [(ngModel)]="nombre">
+<label>Dui:</label>
+<input type="text" [(ngModel)]="Dui">
+<br/>
+<div class="mascota">
+    <h2>Datos de la mascota</h2>
+    <p>Por favor ingresar los datos de la mascota</p>
+</div>
+<label>Nombre de la mascota:</label>
+<input type="text" [(ngModel)]="mascota">
+<br/>
+<div class="servicios">
+    <h2>Servicios a brindar</h2>
+    <p>Por favor ingresar los servicios que se le estan realizando al cliente</p>
+</div>
+<label>Tratamiento:</label>
+<input type="text" [(ngModel)]="tratamiento">
+<label>Medicamento:</label>
+<input type="text" [(ngModel)]="medicamento">
+<label>Costo:</label>
+<input type="text" [(ngModel)]="costo">
+<button class="button" (click)="ingresar()">ingresar</button>
+<br/><br/>
+<table [hidden]="contador == 0">
+    <thead>
+    <tr>
+        <th>Nombre del cliente</th>
+        <th>Dui</th>
+        <th>Nombre de la mascota</th>
+        <th>Tratamiento</th>
+        <th>Medicamento</th>
+        <th>Costo</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tcliente of registro">
+          <td>{{tcliente.nombre}}</td>
+          <td>{{tcliente.Dui}}</td>
+          <td>{{tcliente.mascota}}</td>
+          <td>{{tcliente.tratamiento}}</td>
+          <td>{{tcliente.medicamento}}</td>
+          <td>{{tcliente.costo}}</td>
+        </tr>
+    </tbody>
+</table>
